@@ -1,20 +1,21 @@
-KBUILD_EXTRA_SYMBOLS = $(shell pwd)/Module.symverscd
 ifneq ($(KERNELRELEASE),)
-	obj-m := driver.o morze_enter.o
+	obj-m := md.o
 else
 	CURRENT = $(shell uname -r)
 	KDIR = /lib/modules/$(CURRENT)/build
 	PWD = $(shell pwd)
 
 default:
+	gcc -o crypto crypto.c
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
-	make cleanHalf
 
-cleanHalf:
-	rm -rf *.o *~ *.mod *.mod.c Module.* *.order  .tmp_versions
-	
 clean:
-	make cleanHalf
-	rm -rf *.ko
+	rm -rf .tmp_versions
+	rm *.ko
+	rm *.o
+	rm *.mod.c
+	rm *.symvers
+	rm *.order
+	rm crypto
 
-endif 
+endif
