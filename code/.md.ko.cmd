@@ -1,0 +1,1 @@
+cmd_/home/aleksandrandreev/loadable_kernel_module/code/md.ko := ld -r -m elf_x86_64  -z max-page-size=0x200000  --build-id  -T ./scripts/module-common.lds -o /home/aleksandrandreev/loadable_kernel_module/code/md.ko /home/aleksandrandreev/loadable_kernel_module/code/md.o /home/aleksandrandreev/loadable_kernel_module/code/md.mod.o;  true

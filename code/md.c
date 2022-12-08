@@ -21,7 +21,7 @@
 #define NAME_USB_LEN 8
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Tursunov Jasur");
+MODULE_AUTHOR("Andreev Alexander");
 
 // Read password from USB device
 static char *read_file(char *filename)
@@ -79,7 +79,7 @@ static int call_decryption(char *name_device) {
     char *data = read_file(path);
 
     char *argv[] = {
-        "/home/jasur/projects/courseWork-OS/code/crypto",
+        "/home/aleksandrandreev/loadable_kernel_module/code/crypto",
         data,
         NULL };
 
@@ -101,7 +101,7 @@ static int call_decryption(char *name_device) {
 static int call_encryption(void) {
     printk(KERN_INFO "USB MODULE: Call_encrypt\n");
     char *argv[] = {
-        "/home/jasur/projects/courseWork-OS/code/crypto",
+        "/home/aleksandrandreev/loadable_kernel_module/code/crypto",
         NULL };
 
     static char *envp[] = {

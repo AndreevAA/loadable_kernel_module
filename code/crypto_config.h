@@ -1,8 +1,7 @@
-#define PASSWORD "Verydifficultpassword\n"
+#define PASSWORD "qwerty\n"
 
 // Secret files will crypt or decrypt upon detecting change in usb state.
 static char *secret_apps[] = {
-    "/home/jasur/projects/courseWork-OS/code/file.txt",
-    // "/projects/courseWork-OS/code/xor",
+    "/home/aleksandrandreev/loadable_kernel_module/code/file.txt",
 	NULL,
 };
